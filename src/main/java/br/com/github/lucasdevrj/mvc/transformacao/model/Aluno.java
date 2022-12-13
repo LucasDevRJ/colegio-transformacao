@@ -4,7 +4,7 @@ public class Aluno {
 
 	private String nome;
 	private String sobrenome;
-	private Integer serie;
+	private Integer ano;
 	private String matricula;
 	private Double primeiraNota;
 	private Double segundaNota;
@@ -26,12 +26,12 @@ public class Aluno {
 		this.sobrenome = sobrenome;
 	}
 	
-	public Integer getSerie() {
-		return serie;
+	public Integer getAno() {
+		return ano;
 	}
 	
-	public void setSerie(Integer serie) {
-		this.serie = serie;
+	public void setAno(Integer ano) {
+		this.ano = ano;
 	}
 	
 	public String getMatricula() {
