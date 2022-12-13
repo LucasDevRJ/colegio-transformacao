@@ -9,4 +9,60 @@ public class Aluno {
 	private Double primeiraNota;
 	private Double segundaNota;
 	private Situacao situacao;
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	
+	public Integer getSerie() {
+		return serie;
+	}
+	
+	public void setSerie(Integer serie) {
+		this.serie = serie;
+	}
+	
+	public String getMatricula() {
+		return matricula;
+	}
+	
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+	
+	public Double getPrimeiraNota() {
+		return primeiraNota;
+	}
+	
+	public void setPrimeiraNota(Double primeiraNota) {
+		this.primeiraNota = primeiraNota;
+	}
+	
+	public Double getSegundaNota() {
+		return segundaNota;
+	}
+	
+	public void setSegundaNota(Double segundaNota) {
+		this.segundaNota = segundaNota;
+	}
+	
+	public Situacao getSituacao() {
+		return situacao;
+	}
+	
+	public void setSituacao(Situacao situacao) {
+		this.situacao = situacao;
+	}
 }
