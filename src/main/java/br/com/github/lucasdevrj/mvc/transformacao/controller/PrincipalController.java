@@ -13,15 +13,11 @@ import jakarta.persistence.Query;
 
 @Controller
 public class PrincipalController {
-	
-	@PersistenceContext
-	private EntityManager entityManager;
 
 	@GetMapping("/principal")
 	public String index(Model model) {
 		
-		Query query = entityManager.createQuery("select a from Aluno a", Aluno.class);
-		List<Aluno> alunos = query.getResultList();
+		
 		
 		model.addAttribute("alunos", alunos);
 		
