@@ -1,6 +1,5 @@
 package br.com.github.lucasdevrj.mvc.transformacao.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -8,23 +7,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
-import br.com.github.lucasdevrj.mvc.transformacao.model.Situacao;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 
 @Controller
 public class PrincipalController {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@GetMapping("/principal")
 	public String index(Model model) {
-		Aluno aluno = new Aluno();
-		aluno.setNome("Lucas");
-		aluno.setSobrenome("Pereira");
-		aluno.setAno(3);
-		aluno.setMatricula("33412");
-		aluno.setPrimeiraNota(6.7);
-		aluno.setSegundaNota(7.0);
-		aluno.setSituacao(Situacao.APROVADO);
 		
-		List<Aluno> alunos = Arrays.asList(aluno);
+		Query query = entityManager.createQuery("select a from Aluno a", Aluno.class);
+		List<Aluno> alunos = query.getResultList();
+		
 		model.addAttribute("alunos", alunos);
 		
 		return "principal";
