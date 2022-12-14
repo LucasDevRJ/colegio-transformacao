@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
 import br.com.github.lucasdevrj.mvc.transformacao.repository.AlunoRepository;
-import jakarta.persistence.PersistenceContext;
 
 @Controller
 public class PrincipalController {
@@ -20,7 +19,7 @@ public class PrincipalController {
 	@GetMapping("/principal")
 	public String index(Model model) {
 		
-		List<Aluno> alunos = alunoRepository.recuperaTodosAlunos();
+		List<Aluno> alunos = alunoRepository.findAll();
 		model.addAttribute("alunos", alunos);
 		
 		return "principal";
