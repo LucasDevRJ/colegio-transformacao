@@ -11,6 +11,7 @@ public class RequisicaoNovoAluno {
 	private String matricula;
 	private Double primeiraNota;
 	private Double segundaNota;
+	private Double media;
 	private Situacao situacao;
 	
 	public String getNome() {
@@ -61,6 +62,14 @@ public class RequisicaoNovoAluno {
 		this.segundaNota = segundaNota;
 	}
 	
+	public Double getMedia() {
+		return media;
+	}
+	
+	public void setMedia(Double media) {
+		this.media = media;
+	}
+	
 	public Situacao getSituacao() {
 		return situacao;
 	}
@@ -78,15 +87,9 @@ public class RequisicaoNovoAluno {
 		aluno.setMatricula(matricula);
 		aluno.setPrimeiraNota(primeiraNota);
 		aluno.setSegundaNota(segundaNota);
-		calculaMedia();
-		
-		return aluno;
-	}
-	
-	public Double calculaMedia() {
-		Aluno aluno = new Aluno();
 		
 		double media = (this.primeiraNota + this.segundaNota) / 2;
+		aluno.setMedia(media);
 		
 		if (media >= 6.0) {
 			aluno.setSituacao(Situacao.APROVADO);
@@ -96,6 +99,6 @@ public class RequisicaoNovoAluno {
 			aluno.setSituacao(Situacao.REPROVADO);
 		}
 		
-		return media;
+		return aluno;
 	}
 }

@@ -29,23 +29,25 @@
 				</a>
 			</nav>
 		
-			<div class="card mx-5" style="width: 18rem;" th:each="aluno : ${alunos}">
+			<div class="card" style="width: 18rem;" th:each="aluno : ${alunos}">
 				<div>
 					<h5 class="card-header bg-info text-white">Aluno</h5>
 				</div>
-				<div class="card-body">
-					<div>Nome: <span th:text="${aluno.nome}"></span></div>
-					<div>Sobrenome: <span th:text="${aluno.sobrenome}"></span></div>
-					<div>Série: <span th:text="${aluno.serie}"></span></div>
-					<div>Matrícula: <span th:text="${aluno.matricula}"></span></div>
-					<div>Primeira Nota: <span th:text="${aluno.primeiraNota}"></span></div>
-					<div>Segunda Nota: <span th:text="${aluno.segundaNota}"></span></div>
-					<div>Situação: <span th:text="${aluno.situacao}"></span></div>
-					<div class="d-flex justify-content-around py-2">
-						<div><a href="#" class="card-link">Editar</a></div>
-		    			<div><a href="#" class="card-link">Excluir</a></div>
+					<div class="card-body">
+						<div>Nome: <span th:text="${aluno.nome}"></span></div>
+						<div>Sobrenome: <span th:text="${aluno.sobrenome}"></span></div>
+						<div>Série: <span th:text="${aluno.serie}"></span></div>
+						<div>Matrícula: <span th:text="${aluno.matricula}"></span></div>
+						<div>Primeira Nota: <span th:text="${aluno.primeiraNota}"></span></div>
+						<div>Segunda Nota: <span th:text="${aluno.segundaNota}"></span></div>
+						<div>Média: <span th:text="${aluno.media}"></span></div>
+						<div>Situação: <span th:text="${aluno.situacao}"></span></div>
+						
+						<div class="d-flex justify-content-around py-2">
+							<div><a href="#" class="card-link">Editar</a></div>
+					    	<div><a href="#" class="card-link">Excluir</a></div>
+						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</body>

@@ -17,6 +17,7 @@ public class Aluno {
 	private String matricula;
 	private Double primeiraNota;
 	private Double segundaNota;
+	private Double media;
 	private Situacao situacao;
 	
 	public String getNome() {
@@ -65,6 +66,14 @@ public class Aluno {
 	
 	public void setSegundaNota(Double segundaNota) {
 		this.segundaNota = segundaNota;
+	}
+	
+	public Double getMedia() {
+		return media;
+	}
+	
+	public void setMedia(Double media) {
+		this.media = media;
 	}
 	
 	public Situacao getSituacao() {

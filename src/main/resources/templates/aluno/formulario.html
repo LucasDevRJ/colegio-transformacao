@@ -12,47 +12,47 @@
 			</div>
 		</header>
 		<div class="container">
-		
-			<form action="/aluno/novo" method="post">
-				<div>
-					<label for="nome">Nome:</label>
-					<input type="text" name="nome">
-					<small>Digite o nome do aluno</small>
-				</div>
-				
-				<div>
-					<label for="sobrenome">Sobrenome:</label>
-					<input type="text" name="sobrenome">
-					<small>Digite o sobrenome do aluno</small>
-				</div>
-				
-				<div>
-					<label for="serie">Série:</label>
-					<input type="text" name="serie">
-					<small>Digite a série do aluno</small>
-				</div>
-				
-				<div>
-					<label for="matricula">Matrícula:</label>
-					<input type="text" name="matricula">
-					<small>Digite a matrícula do aluno</small>
-				</div>
-				
-				<div>
-					<label for="primeiraNota">Primeira Nota:</label>
-					<input type="text" name="primeiraNota">
-					<small>Digite a primeira nota do aluno</small>
-				</div>
-				
-				<div>
-					<label for="segundaNota">Segunda Nota:</label>
-					<input type="text" name="segundaNota">
-					<small>Digite a segunda nota do aluno</small>
-				</div>
-				
-				<button type="submit">Cadastrar</button>
-			</form>
-		
+			<div class="card my-5">
+				<form class="card-body" action="/aluno/novo" method="post">
+					<div class="form-group my-2">
+						<label for="nome">Nome:</label>
+						<input class="form-control" type="text" name="nome">
+						<small>Digite o nome do aluno</small>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="sobrenome">Sobrenome:</label>
+						<input class="form-control" type="text" name="sobrenome">
+						<small>Digite o sobrenome do aluno</small>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="serie">Série:</label>
+						<input class="form-control" type="text" name="serie">
+						<small>Digite a série do aluno</small>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="matricula">Matrícula:</label>
+						<input class="form-control" type="text" name="matricula">
+						<small>Digite a matrícula do aluno</small>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="primeiraNota">Primeira Nota:</label>
+						<input class="form-control" type="text" name="primeiraNota">
+						<small>Digite a primeira nota do aluno</small>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="segundaNota">Segunda Nota:</label>
+						<input class="form-control" type="text" name="segundaNota">
+						<small>Digite a segunda nota do aluno</small>
+					</div>
+					
+					<button class="btn btn-primary my-2" type="submit">Cadastrar</button>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
