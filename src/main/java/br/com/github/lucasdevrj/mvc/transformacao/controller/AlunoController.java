@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.github.lucasdevrj.mvc.transformacao.dto.RequisicaoNovoAluno;
+import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
 
 @Controller
 @RequestMapping("aluno")
@@ -18,6 +19,9 @@ public class AlunoController {
 	
 	@PostMapping("novo")
 	public String novo(RequisicaoNovoAluno requisicao) {
+		
+		Aluno aluno = requisicao.toAluno();
+		
 		return "aluno/formulario";
 	}
 }
