@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Colégio Transformação</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	</head>
+	<body>
+		<header>
+			<div class="p-5 bg-info text-light">
+				<h1>Colégio Transformação</h1>
+			</div>
+		</header>
+		<div class="container">
+		
+			<form action="/aluno/novo" method="post">
+				<div>
+					<label for="nome">Nome:</label>
+					<input type="text" name="nome">
+					<small>Digite o nome do aluno</small>
+				</div>
+				
+				<div>
+					<label for="sobrenome">Sobrenome:</label>
+					<input type="text" name="sobrenome">
+					<small>Digite o sobrenome do aluno</small>
+				</div>
+				
+				<div>
+					<label for="serie">Série:</label>
+					<input type="text" name="serie">
+					<small>Digite a série do aluno</small>
+				</div>
+				
+				<div>
+					<label for="matricula">Matrícula:</label>
+					<input type="text" name="matricula">
+					<small>Digite a matrícula do aluno</small>
+				</div>
+				
+				<div>
+					<label for="primeiraNota">Primeira Nota:</label>
+					<input type="text" name="primeiraNota">
+					<small>Digite a primeira nota do aluno</small>
+				</div>
+				
+				<div>
+					<label for="segundaNota">Segunda Nota:</label>
+					<input type="text" name="segundaNota">
+					<small>Digite a segunda nota do aluno</small>
+				</div>
+				
+				<button type="submit">Cadastrar</button>
+			</form>
+		
+		</div>
+	</body>
+</html>
