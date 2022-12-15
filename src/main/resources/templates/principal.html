@@ -30,9 +30,9 @@
 			</nav>
 		
 			<div class="card" style="width: 18rem;" th:each="aluno : ${alunos}">
-				<div>
-					<h5 class="card-header bg-info text-white">Aluno</h5>
-				</div>
+					<div>
+						<h5 class="card-header bg-info text-white">Aluno</h5>
+					</div>
 					<div class="card-body">
 						<div>Nome: <span th:text="${aluno.nome}"></span></div>
 						<div>Sobrenome: <span th:text="${aluno.sobrenome}"></span></div>

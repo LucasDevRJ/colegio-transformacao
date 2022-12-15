@@ -2,6 +2,7 @@ package br.com.github.lucasdevrj.mvc.transformacao.dto;
 
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -113,7 +114,13 @@ public class RequisicaoNovoAluno {
 		aluno.setPrimeiraNota(primeiraNota);
 		aluno.setSegundaNota(segundaNota);
 		
-		double media = (this.primeiraNota + this.segundaNota) / 2;
+		calculaMedia(aluno);
+		
+		return aluno;
+	}
+	
+	public Double calculaMedia(Aluno aluno) {
+		double media = (primeiraNota + segundaNota) / 2;
 		aluno.setMedia(media);
 		
 		if (media >= 6.0) {
@@ -123,7 +130,6 @@ public class RequisicaoNovoAluno {
 		} else {
 			aluno.setSituacao(Situacao.REPROVADO);
 		}
-		
-		return aluno;
+		return media;
 	}
 }

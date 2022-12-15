@@ -13,40 +13,40 @@
 		</header>
 		<div class="container">
 			<div class="card my-5">
-				<form class="card-body" action="/aluno/novo" method="post">
+				<form th:object="${requisicaoNovoAluno}" class="card-body" action="/aluno/novo" method="post">
 					<div class="form-group my-2">
 						<label for="nome">Nome:</label>
-						<input class="form-control" type="text" name="nome">
+						<input th:field="*{nome}" class="form-control" type="text">
 						<small>Digite o nome do aluno</small>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="sobrenome">Sobrenome:</label>
-						<input class="form-control" type="text" name="sobrenome">
+						<input th:field="*{sobrenome}" class="form-control" type="text">
 						<small>Digite o sobrenome do aluno</small>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="serie">Série:</label>
-						<input class="form-control" type="text" name="serie">
+						<input th:field="*{serie}" class="form-control" type="text">
 						<small>Digite a série do aluno</small>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="matricula">Matrícula:</label>
-						<input class="form-control" type="text" name="matricula">
+						<input th:field="*{matricula}" class="form-control" type="text">
 						<small>Digite a matrícula do aluno</small>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="primeiraNota">Primeira Nota:</label>
-						<input class="form-control" type="text" name="primeiraNota">
+						<input th:field="*{primeiraNota}" class="form-control" type="text">
 						<small>Digite a primeira nota do aluno</small>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="segundaNota">Segunda Nota:</label>
-						<input class="form-control" type="text" name="segundaNota">
+						<input th:field="*{segundaNota}" class="form-control" type="text">
 						<small>Digite a segunda nota do aluno</small>
 					</div>
 					
