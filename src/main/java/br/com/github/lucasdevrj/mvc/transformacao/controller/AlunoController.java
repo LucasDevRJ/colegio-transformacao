@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.github.lucasdevrj.mvc.transformacao.dto.RequisicaoEditaAluno;
 import br.com.github.lucasdevrj.mvc.transformacao.dto.RequisicaoNovoAluno;
 import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
 import br.com.github.lucasdevrj.mvc.transformacao.repository.AlunoRepository;
@@ -24,6 +25,11 @@ public class AlunoController {
 		return "aluno/formulario";
 	}
 	
+	@GetMapping("edita-formulario")
+	public String editaFormulario(RequisicaoEditaAluno requisicao) {
+		return "aluno/edita-formulario";
+	}
+	
 	@PostMapping("novo")
 	public String novo(@Validated RequisicaoNovoAluno requisicao, BindingResult resultado) {
 		
@@ -35,5 +41,18 @@ public class AlunoController {
 		alunoRepository.save(aluno);
 		
 		return "aluno/formulario";
+	}
+	
+	@PostMapping("edita")
+	public String edita(@Validated RequisicaoEditaAluno requisicao, BindingResult resultado) {
+		
+		if (resultado.hasErrors()) {
+			return "aluno/edita-formulario";
+		}
+		
+		Aluno aluno = requisicao.toAluno();
+		alunoRepository.save(aluno);
+		
+		return "aluno/edita-formulario";
 	}
 }
