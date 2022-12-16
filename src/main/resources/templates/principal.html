@@ -11,7 +11,8 @@
 				<h1>Colégio Transformação</h1>
 			</div>
 		</header>
-		<div class="container">
+		
+		<div class="container py-5">
 		
 			<div class="jumbotron mb-0 bg-light p-5 d-flex justify-content-center">
 	    		<h2 class="display-4">Transformar através do ensino!</h2>
@@ -29,7 +30,8 @@
 				</a>
 			</nav>
 		
-			<div class="card" style="width: 18rem;" th:each="aluno : ${alunos}">
+			<div class="d-flex justify-content-center">
+				<div class="card mx-3" style="width: 18rem;" th:each="aluno : ${alunos}">
 					<div>
 						<h5 class="card-header bg-info text-white">Aluno</h5>
 					</div>
@@ -48,7 +50,14 @@
 					    	<div><a href="#" class="card-link">Excluir</a></div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
+		
+		<footer>
+			<div class="p-5 bg-info">
+				
+			</div>
+		</footer>
 	</body>
 </html>
