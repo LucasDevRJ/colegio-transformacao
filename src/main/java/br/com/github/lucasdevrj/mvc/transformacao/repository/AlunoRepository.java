@@ -12,6 +12,6 @@ import br.com.github.lucasdevrj.mvc.transformacao.model.Situacao;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Integer>{
 
-	List<Aluno> findAllByAprovado(Situacao aprovado);
+	List<Aluno> findAllBySituacao(Situacao situacao);
 
 }

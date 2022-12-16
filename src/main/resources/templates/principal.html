@@ -12,10 +12,10 @@
 	
 			<nav class="navbar navbar-expand bg-light px-5 mt-5 mb-3 d-flex justify-content-between flex-wrap">
 				<div class="navbar-nav">
-					<a class="nav-link active mx-2" href="">Todos</a>
-					<a class="nav-link mx-2" href="">Aprovados</a>
-					<a class="nav-link mx-2" href="">Recuperação</a>
-					<a class="nav-link mx-2" href="">Reprovados</a>
+					<a class="nav-link active mx-2" href="/principal">Todos</a>
+					<a class="nav-link mx-2" href="/principal/aprovado">Aprovados</a>
+					<a class="nav-link mx-2" href="/principal/recuperacao">Recuperação</a>
+					<a class="nav-link mx-2" href="/principal/reprovado">Reprovados</a>
 				</div>
 				<a href="/aluno/formulario">
 					<button class="btn btn-dark">Novo</button>
@@ -39,10 +39,10 @@
 						<div>Média: <span th:text="${aluno.media}"></span></div>
 						
 						<th:block th:switch="${aluno.situacao.name()}">
-							<div>Situação: <span th:case="todos" th:text="${aluno.situacao}"></span></div>
-							<div>Situação: <span th:case="APROVADO" th:text="${aluno.situacao}"></span></div>
-							<div>Situação: <span th:case="RECUPERACAO" th:text="${aluno.situacao}"></span></div>
-							<div>Situação: <span th:case="REPROVADO" th:text="${aluno.situacao}"></span></div>
+							<span>Situação:</span>
+							<span th:case="APROVADO" th:text="${aluno.situacao}"></span>
+							<span th:case="RECUPERACAO" th:text="${aluno.situacao}"></span>
+							<span th:case="REPROVADO" th:text="${aluno.situacao}"></span>
 						</th:block>
 						
 						<div class="d-flex justify-content-around py-2">
