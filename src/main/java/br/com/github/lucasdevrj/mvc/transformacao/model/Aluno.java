@@ -1,6 +1,8 @@
 package br.com.github.lucasdevrj.mvc.transformacao.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,6 +20,8 @@ public class Aluno {
 	private Double primeiraNota;
 	private Double segundaNota;
 	private Double media;
+	
+	@Enumerated(EnumType.STRING)
 	private Situacao situacao;
 	
 	public Integer getId() {
