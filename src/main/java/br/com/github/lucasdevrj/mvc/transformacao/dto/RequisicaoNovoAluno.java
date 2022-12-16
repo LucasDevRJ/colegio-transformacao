@@ -1,14 +1,16 @@
 package br.com.github.lucasdevrj.mvc.transformacao.dto;
 
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
 import br.com.github.lucasdevrj.mvc.transformacao.model.Situacao;
+import jakarta.validation.UnexpectedTypeException;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 
 public class RequisicaoNovoAluno {
@@ -19,20 +21,20 @@ public class RequisicaoNovoAluno {
 	@NotBlank
 	private String sobrenome;
 	
-	@NotBlank
-	@Size(min = 1, max = 9)
+	@NotNull
+	@Digits(integer = 1, fraction = 9)
 	private Integer serie;
 	
 	@NotBlank
 	@Size(min = 5, max = 5)
 	private String matricula;
 	
-	@NotBlank
+	@NotNull
 	@DecimalMin("0.0")
 	@DecimalMax("10.0")
 	private Double primeiraNota;
 	
-	@NotBlank
+	@NotNull
 	@DecimalMin("0.0")
 	@DecimalMax("10.0")
 	private Double segundaNota;
@@ -114,7 +116,11 @@ public class RequisicaoNovoAluno {
 		aluno.setPrimeiraNota(primeiraNota);
 		aluno.setSegundaNota(segundaNota);
 		
-		calculaMedia(aluno);
+		try {
+			calculaMedia(aluno);
+		} catch(NullPointerException | UnexpectedTypeException e) {
+			e.printStackTrace();
+		}
 		
 		return aluno;
 	}

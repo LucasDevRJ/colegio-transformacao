@@ -16,38 +16,56 @@
 				<form th:object="${requisicaoNovoAluno}" class="card-body" action="/aluno/novo" method="post">
 					<div class="form-group my-2">
 						<label for="nome">Nome:</label>
-						<input th:field="*{nome}" class="form-control" type="text">
+						<input th:field="*{nome}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite o nome do aluno</small>
+						<div class="invalid-feedback" th:errors="*{nome}">
+							Erros do nome do aluno
+						</div>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="sobrenome">Sobrenome:</label>
-						<input th:field="*{sobrenome}" class="form-control" type="text">
+						<input th:field="*{sobrenome}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite o sobrenome do aluno</small>
+						<div class="invalid-feedback" th:errors="*{sobrenome}">
+							Erros do sobrenome do aluno
+						</div>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="serie">Série:</label>
-						<input th:field="*{serie}" class="form-control" type="text">
+						<input th:field="*{serie}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite a série do aluno</small>
+						<div class="invalid-feedback" th:errors="*{serie}">
+							Erros da série do aluno
+						</div>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="matricula">Matrícula:</label>
-						<input th:field="*{matricula}" class="form-control" type="text">
+						<input th:field="*{matricula}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite a matrícula do aluno</small>
+						<div class="invalid-feedback" th:errors="*{matricula}">
+							Erros da matrícula do aluno
+						</div>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="primeiraNota">Primeira Nota:</label>
-						<input th:field="*{primeiraNota}" class="form-control" type="text">
+						<input th:field="*{primeiraNota}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite a primeira nota do aluno</small>
+						<div class="invalid-feedback" th:errors="*{primeiraNota}">
+							Erros da primeira nota do aluno
+						</div>
 					</div>
 					
 					<div class="form-group my-2">
 						<label for="segundaNota">Segunda Nota:</label>
-						<input th:field="*{segundaNota}" class="form-control" type="text">
+						<input th:field="*{segundaNota}" th:errorclass="is-invalid" class="form-control" type="text">
 						<small>Digite a segunda nota do aluno</small>
+						<div class="invalid-feedback" th:errors="*{segundaNota}">
+							Erros da segunda nota do aluno
+						</div>
 					</div>
 					
 					<button class="btn btn-primary my-2" type="submit">Cadastrar</button>
