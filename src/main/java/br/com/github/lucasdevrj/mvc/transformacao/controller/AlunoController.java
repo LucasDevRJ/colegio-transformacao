@@ -34,6 +34,6 @@ public class AlunoController {
 		Aluno aluno = requisicao.toAluno();
 		alunoRepository.save(aluno);
 		
-		return "aluno/formulario";
+		return "redirect:/principal";
 	}
 }

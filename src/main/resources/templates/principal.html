@@ -27,6 +27,7 @@
 					<div>
 						<h5 class="card-header bg-info text-white">Aluno</h5>
 					</div>
+				
 					<div class="card-body">
 						<div>ID: <span th:text="${aluno.id}"></span></div>
 						<div>Nome: <span th:text="${aluno.nome}"></span></div>
@@ -36,7 +37,13 @@
 						<div>Primeira Nota: <span th:text="${aluno.primeiraNota}"></span></div>
 						<div>Segunda Nota: <span th:text="${aluno.segundaNota}"></span></div>
 						<div>Média: <span th:text="${aluno.media}"></span></div>
-						<div>Situação: <span th:text="${aluno.situacao}"></span></div>
+						
+						<th:block th:switch="${aluno.situacao.name()}">
+							<div>Situação: <span th:case="todos" th:text="${aluno.situacao}"></span></div>
+							<div>Situação: <span th:case="APROVADO" th:text="${aluno.situacao}"></span></div>
+							<div>Situação: <span th:case="RECUPERACAO" th:text="${aluno.situacao}"></span></div>
+							<div>Situação: <span th:case="REPROVADO" th:text="${aluno.situacao}"></span></div>
+						</th:block>
 						
 						<div class="d-flex justify-content-around py-2">
 							<div><a href="#" class="card-link">Editar</a></div>
