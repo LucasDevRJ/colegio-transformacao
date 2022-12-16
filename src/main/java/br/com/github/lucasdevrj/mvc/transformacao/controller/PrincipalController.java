@@ -36,6 +36,7 @@ public class PrincipalController {
 		
 		List<Aluno> alunos = alunoRepository.findAllBySituacao(Situacao.valueOf(situacao.toUpperCase()));
 		model.addAttribute("alunos", alunos);
+		model.addAttribute("situacao", situacao);
 		
 		return "principal";
 	}

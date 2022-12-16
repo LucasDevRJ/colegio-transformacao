@@ -1,12 +1,23 @@
 package br.com.github.lucasdevrj.mvc.transformacao.controller;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import br.com.github.lucasdevrj.mvc.transformacao.dto.RequisicaoNovoAluno;
 import br.com.github.lucasdevrj.mvc.transformacao.model.Aluno;
@@ -35,5 +46,12 @@ public class AlunoController {
 		alunoRepository.save(aluno);
 		
 		return "redirect:/principal";
+	}
+	
+	@PostMapping("exclui/{id}")
+	public void exclui(@PathVariable("id") Integer id) {
+		Aluno aluno = this.alunoRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		this.alunoRepository.delete(aluno);
+		System.out.println("O aluno " + id + " foi deletado");
 	}
 }

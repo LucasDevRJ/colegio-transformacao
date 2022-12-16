@@ -12,10 +12,10 @@
 	
 			<nav class="navbar navbar-expand bg-light px-5 mt-5 mb-3 d-flex justify-content-between flex-wrap">
 				<div class="navbar-nav">
-					<a class="nav-link active mx-2" href="/principal">Todos</a>
-					<a class="nav-link mx-2" href="/principal/aprovado">Aprovados</a>
-					<a class="nav-link mx-2" href="/principal/recuperacao">Recuperação</a>
-					<a class="nav-link mx-2" href="/principal/reprovado">Reprovados</a>
+					<a th:classappend="${situacao} == null ? 'active'" class="nav-link mx-2" href="/principal">Todos</a>
+					<a th:classappend="${situacao} == 'aprovado' ? 'active'" class="nav-link mx-2" href="/principal/aprovado">Aprovados</a>
+					<a th:classappend="${situacao} == 'recuperacao' ? 'active'" class="nav-link mx-2" href="/principal/recuperacao">Recuperação</a>
+					<a th:classappend="${situacao} == 'reprovado' ? 'active'" class="nav-link mx-2" href="/principal/reprovado">Reprovados</a>
 				</div>
 				<a href="/aluno/formulario">
 					<button class="btn btn-dark">Novo</button>
@@ -36,7 +36,7 @@
 						<div>Matrícula: <span th:text="${aluno.matricula}"></span></div>
 						<div>Primeira Nota: <span th:text="${aluno.primeiraNota}"></span></div>
 						<div>Segunda Nota: <span th:text="${aluno.segundaNota}"></span></div>
-						<div>Média: <span th:text="${aluno.media}"></span></div>
+						<div>Média: <span th:text="${#numbers.formatDecimal(aluno.media,1,1,'COMMA')}"></span></div>
 						
 						<th:block th:switch="${aluno.situacao.name()}">
 							<span>Situação:</span>
@@ -47,7 +47,9 @@
 						
 						<div class="d-flex justify-content-around py-2">
 							<div><a href="#" class="card-link">Editar</a></div>
-					    	<div><a href="#" class="card-link">Excluir</a></div>
+					    	<form th:method="@{/aluno/exclui/{id}(id = ${aluno.id})}" method="post">
+					    		<button type="submit" class="card-link">Excluir</button>
+					    	</form>
 						</div>
 					</div>
 				</div>
