@@ -47,11 +47,4 @@ public class AlunoController {
 		
 		return "redirect:/principal";
 	}
-	
-	@PostMapping("exclui/{id}")
-	public void exclui(@PathVariable("id") Integer id) {
-		Aluno aluno = this.alunoRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
-		this.alunoRepository.delete(aluno);
-		System.out.println("O aluno " + id + " foi deletado");
-	}
 }
